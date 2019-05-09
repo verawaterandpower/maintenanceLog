@@ -21,90 +21,53 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                        <!-- equipment locations -->
-                        <div class="dropdown">
-                            <li class="nav-item"><a class="nav-link dropbtn" href="#"><span class="fa fa-suitcase fa-lg"></span> Equipment</a></li>
-                            <div class="container dropdown-content">
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 1</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Booster 1</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Reservoir 1</a>
-                                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home </a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-suitcase fa-lg"></span> Equipment <b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <ul class="multi-column-dropdown column1">
+                                        <li><a onclick="displayLocation(well1)">Well 1</a></li>
+                                        <li><a href="#">Well 2</a></li>
+                                        <li><a href="#">Well 3</a></li>
+                                        <li><a href="#">Well 4</a></li>
+                                        <li><a href="#">Well 5</a></li>
+                                        <li><a href="#">well 6</a></li>
+                                        <li><a href="#">Well 7</a></li>
+                                        <li><a href="#">Well 8</a></li> 
+                                        <li><a href="#">Well 9</a></li> 
+                                    </ul>
                                 </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 2</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Booster 2</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Reservoir 2</a>
-                                    </div>
+                                <div class="col-sm-4">
+                                    <ul class="multi-column-dropdown">
+                                        <li><a href="#">Booster 1</a></li>
+                                        <li><a href="#">Booster 2</a></li>
+                                        <li><a href="#">Booster 3</a></li>
+                                        <li><a href="#">Booster 4</a></li>
+                                        <li><a href="#">Booster 5</a></li>
+                                    </ul>
                                 </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 3</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Booster 3</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Reservoir 3</a>
-                                    </div>
+                                <div class="col-sm-4">
+                                    <ul class="multi-column-dropdown">
+                                        <li><a href="#">Reservior 1</a></li>
+                                        <li><a href="#">Reservior 2</a></li>
+                                        <li><a href="#">Reservior 3</a></li>
+                                        <li><a href="#">Reservior 4</a></li>
+                                        <li><a href="#">Reservior 5</a></li> 
+                                    </ul>
                                 </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 4</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Booster 4</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Reservoir 4</a>
-                                    </div>
-                                </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 5</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Booster 5</a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">Reservoir 5</a>
-                                    </div>
-                                </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 6</a>
-                                    </div>
-                                </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 7</a>
-                                    </div>
-                                </div>
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 8</a>
-                                    </div>
-                                </div> 
-                                <div class="row"> 
-                                    <div class="col-4">
-                                        <a href="#">Well 9</a>
-                                    </div>
-                                </div>                      
                             </div>
-                        </div>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-map-o fa-lg"></span> Maps</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> ???</a>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-map-o fa-lg"></span> Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> ???</a>
+                    </li>
                 </ul>   
             </div> 
         </div>
@@ -122,7 +85,7 @@
 
     <div class="container">
         <div class="row row-content">
-            <div class="col-md-4">
+            <div class="col-md-4" id="equipment">
                 this will be the equipment name
             </div>
         </div>
@@ -135,6 +98,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
