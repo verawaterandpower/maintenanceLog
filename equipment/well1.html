@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home </a>
+                        <a class="nav-link" href="../index.html"><span class="fa fa-home fa-lg"></span> Home </a>
                     </li>
                     <li class="dropdown nav-item">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><span class="fa fa-suitcase fa-lg"></span> Equipment <b class="caret"></b></a>
@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <ul class="multi-column-dropdown column1">
-                                        <li><a href="./equipment/well1.html">Well 1</a></li>
+                                        <li><a onclick="displayLocation(well1)">Well 1</a></li>
                                         <li><a href="#">Well 2</a></li>
                                         <li><a href="#">Well 3</a></li>
                                         <li><a href="#">Well 4</a></li>
@@ -77,56 +77,66 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h1>Water Equipment Maintenance Log</h1>
+                    <h1>Water Maintenance Log</h1>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
+        <!--Breadcrumb-->
         <div class="row">
             <ol class="col-12 breadcrumb">
                 Current Page: 
-                <li class="breadcrumb-item active"><a href="./index.html"> Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.html"> Home</a></li>
+                <li class="breadcrumb-item active"> Well 1</a></li>
             </ol>
+            <div class="col-12">
+                <h3>Well House 1</h3>
+            </div>
         </div>
+        <!-- Equipment Table -->
         <div class="row row-content">
             <div class="col" id="equipment">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                   
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="images/well1-night.jpg" alt="well1">
-                            <div class="carousel-caption d-none d-md-block offset-3">
-                                <h5>well 1 hes been around forver</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item ">
-                            <img class="d-block img-fluid" src="images/well1-night.jpg" alt="well1">
-                            <div class="carousel-caption d-none d-md-block offset-3">
-                                <h5>slide 2</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item ">
-                            <img class="d-block img-fluid" src="images/well1-night.jpg" alt="well1">
-                            <div class="carousel-caption d-none d-md-block offset-3">
-                                <h5>slide 3</h5>
-                            </div>
-                        </div>
+                <table class="table table-striped table-hover">
+                    <!-- Table Header -->
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Equipment Name</th>
+                            <th scope="col">Last Service Date</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <!-- Table Body -->
+                    <tbody>
+                        <tr>
+                            
+                                <th scope="row"><a data-toggle="modal" data-target="#motor">Motor </a></th>
+                                <td>March 20, 2019</td>
+                                <td>Oil was looking low</td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">Chlorinator</th>
+                            <td>March 1, 2019</td>
+                            <td>check the seal next time in</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--add equipment-->
+                <button class="btn btn-secondary">Add Equipment</button>
+            </div>
+        </div>
+        <!--Motor Modal-->
+        <div class="modal fade" role="dialog" id="motor">
+            <div class="modal-dialog modal-lg align-content-center" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Well House 1: Motor
                     </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel" data-slide-to="1"></li>
-                        <li data-target="#mycarousel" data-slide-to="2"></li>
-                    </ol>
-                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+                    <div class="modal-body">
+                        <h4>this will be a table of all possible services</h4>
+                    </div>
                 </div>
             </div>
         </div>
