@@ -73,33 +73,41 @@ body{
 	color: #262626;
 	background-color: #999;
 }
-  .dropdown-content a:hover {
-      background-color: rgb(104, 104, 104);
-    }
-  
-  .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  .column1{
-      padding-left: 5px;
-  }
-  .dropdown:hover .dropbtn {
-      background-color: rgba(45, 0, 168, 0.932)
-    }
-    .carousel {
-        background:rgba(0, 2, 107, 0.87);
-    }
-    
-    .carousel-item {
-      height: 300px;
-    }
-    
-    .carousel-item img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-height: 300px;
-    }
+.dropdown-content a:hover {
+    background-color: rgb(104, 104, 104);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.column1{
+    padding-left: 5px;
+}
+.dropdown:hover .dropbtn {
+    background-color: rgba(45, 0, 168, 0.932)
+}
+.carousel {
+    background:rgba(0, 2, 107, 0.87);
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+.carousel-caption{
+    background: rgba(0, 2, 107, 0.75);
+    text-align: center;
+
+}
+#motorModal {
+    min-width: 1000px;
+}
  /* mobile */
 @media only screen and (max-width: 600px){
     .dropdown-menu.multi-column {
