@@ -1,0 +1,123 @@
+@blueAccent:rgb(0, 2, 107);
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+.navbar-dark {
+    background-color: rgba(92, 92, 92, 0.719);
+}
+.row-header{
+    margin-left:10px auto;
+    text-align: center;
+
+}
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+.footer{
+    background-color: rgba(85, 85, 85, 0.75);
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: rgba(85, 85, 85, 0.75) ;
+    color:floralwhite;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color:#8a8888;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #8a8888;
+    min-width: 450px;
+    box-shadow: 0px 8px 16px 0px rgba(85, 85, 85, 0.2);
+    z-index: 1;
+  }
+.dropdown- a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+.multi-column-dropdown {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+.multi-column-dropdown {
+    li a {
+        display: block;
+        clear: both;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: normal;
+    }
+    li a:hover {
+        text-decoration: none;
+        color: #262626;
+        background-color: #999;
+    }
+}
+.dropdown-content a:hover {
+    background-color: rgb(104, 104, 104);
+}
+.dropdown:hover {
+    .dropdown-content {
+        display: block;
+    }
+    dropbtn {
+        background-color: rgba(45, 0, 168, 0.932)
+    }
+}
+.column1{
+    padding-left: 5px;
+}
+.carousel {
+    background:rgb(0, 2, 107);
+}
+.carousel-item {
+    height: 300px;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 300px;
+        max-height: 300px;
+    }
+}
+.carousel-caption{
+    background: rgba(0, 2, 107, 0.5);
+    text-align: center;
+
+}
+#motorModal {
+    min-width: 1000px;
+}
+.edit {
+
+    text-align: right;
+    text-decoration: none;
+
+}
+.equipList{
+    min-width: 80vw;
+
+}
+/* mobile */
+@media only screen and (max-width: 600px){
+    .dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+}
