@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: ['css/**/*.less'], // which files to watch
+            files: ['css/**/*.less','*.html','js/**/*.js'], // which files to watch
             tasks: ['less'],
         },
         browserSync: {
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 bsFiles: {
                     src : [
                         'css/*.css',
-                        '*.html',
+                        '**/*.html',
                         'js/*.js'
                     ]
                 },
