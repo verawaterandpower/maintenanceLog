@@ -12,6 +12,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/well1.css">
+
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 </head>
@@ -97,14 +99,21 @@
         </div>
         <!-- Equipment Table -->
         <div class="row row-content">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" id="wellHouseTab">
+                    <a class="nav-link active">Well House</a>
+                </li>
+                <li class="nav-item" id="chlorinatorTab">
+                    <a class="nav-link" >Chlorinator</a>
+                </li>
+            </ul>
 
-
-            <div class="accordion" id="Well1Equipment">
-
-                <div class="card equipList">
+            <div class="accordion equipList" id="WellHouseEquipment">
+                <h1>Well House</h1>
+                <div class="card ">
                     <div class="card-header" id="motor1">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#motor1Collapse" aria-controls="motor1Collapse">
+                            <button class="btn btn-link" type="button" onclick="javascript:accordianToggle('#motor1Collapse','#chlorinatorCollapse')"  aria-controls="motor1Collapse">
                             Motor 350
                             </button>
                             <button type="button" class="edit" ><i class="fa fa-edit"></i> </button>
@@ -133,14 +142,14 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th><button type="button" class="btn" data-toggle="modal" data-target="#oilModal">Oil Change</button></th>
+                                        <th><button type="button" class="btn" data-target="#oilModal">Oil Change</button></th>
                                         <th>Brady</th>
                                         <th>May 30, 2018</th>
                                         <th>May 30, 2019</th>
                                         <th>Send oil out to be checked</th>
                                     </tr>
                                     <tr>
-                                        <th><button type="button" class="btn" data-toggle="modal" data-target="#oilModal">Grease stuffing box</button></th>
+                                        <th><button type="button" class="btn" data-target="#oilModal">Grease stuffing box</button></th>
                                         <th>Brady</th>
                                         <th>May 30, 2018</th>
                                         <th>May 30, 2019</th>
@@ -155,7 +164,7 @@
                 <div class="card">
                     <div class="card-header" id="chlorinator">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#chlorinatorCollapse" aria-controls="chlorinatorCollapse">
+                            <button class="btn btn-link" type="button" onclick="javascript:accordianToggle('#chlorinatorCollapse','#motor1Collapse')">
                             Pump 350hp
                             </button>
                         </h5>
@@ -199,6 +208,106 @@
                 <!--add equipment-->
                 <button class="btn btn-secondary">Add Equipment</button>
             </div>
+            <div class="accordion equipList" id="chlorinatorEquipment">
+                <h1>Chlorinator</h1>
+                <div class="card ">
+                    <div class="card-header" id="motor1">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="accordion" data-target="#motor1Collapse" aria-controls="motor1Collapse">
+                            Motor
+                            </button>
+                            <button type="button" class="edit" ><i class="fa fa-edit"></i> </button>
+                        </h5>
+                    </div>
+                    <div id="motor1Collapse" class="collapse show" aria-labelledby="motor1" data-parent="#Well1Equipment">
+                        <div class="card-body">
+                            <h5><b>Info</b> </h5>
+                            <div class="row equipInfo"> 
+                                <p class="col">Horse pwr: boop</p>
+                                <p class="col">Oil Type: 20w</p>
+                                <p class="col">serial number:yyyyyyyyyyy</p>
+                                <p class="col">Grease Type:abc</p>
+                            </div>
+                            
+                            <table class="table table-striped table-hover">
+                                <!-- Table Header -->
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Maintenance Task</th>
+                                        <th scope="col">Who did the Work</th>
+                                        <th scope="col">Last Service Date</th>
+                                        <th scope="col">Next Service Date</th>
+                                        <th scope="col">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th><button type="button" class="btn" data-target="#oilModal">Oil Change</button></th>
+                                        <th>Brady</th>
+                                        <th>May 30, 2018</th>
+                                        <th>May 30, 2019</th>
+                                        <th>Send oil out to be checked</th>
+                                    </tr>
+                                    <tr>
+                                        <th><button type="button" class="btn" data-target="#oilModal">Grease stuffing box</button></th>
+                                        <th>Brady</th>
+                                        <th>May 30, 2018</th>
+                                        <th>May 30, 2019</th>
+                                        <th>Send oil out to be checked</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-secondary" id="motorService">Add Service</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="chlorinator">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="accordion" data-target="#chlorinatorCollapse" aria-controls="chlorinatorCollapse">
+                            Pump 350hp
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="chlorinatorCollapse" class="collapse" aria-labelledby="chlorinator" data-parent="#Well1Equipment">
+                        <div class="card-body">
+                            <h5><b>Info</b> </h5>
+                            <div class="row equipInfo"> 
+                                <p class="col">Horse pwr: 350</p>
+                                <p class="col">Date installed: 05/30/2016</p>
+                                <p class="col">serial number:xxxxxxxxxxx</p>
+                                <p class="col">Grease Type:???</p>
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <!-- Table Header -->
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Maintenance Task</th>
+                                        <th scope="col">Who did the Work</th>
+                                        <th scope="col">Last Service Date</th>
+                                        <th scope="col">Next Service Date</th>
+                                        <th scope="col">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Filter Change</th>
+                                        <th>Brady</th>
+                                        <th>March 10, 2019</th>
+                                        <th>August 30, 2019</th>
+                                        <th>Check the seals</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn btn-secondary" >Add Service</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!--add equipment-->
+                <button class="btn btn-secondary" id="addWellEquip">Add Equipment</button>
+            </div>
         </div>
         <!--oil Modal-->
         <div class="modal fade" role="dialog" id="oilModal">
@@ -218,6 +327,21 @@
                 </div>
             </div>
         </div>
+        <!--add Equipment Form-->
+        <div class="modal fade" role="dialog" id="wellEquipForm">
+            <div class="modal-dialog modal-lg align-content-center">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Add Equipment for Well House 1</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
@@ -229,6 +353,7 @@
     <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/well1.js"></script>
 
 </body>
 
