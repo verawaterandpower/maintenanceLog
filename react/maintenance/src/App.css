@@ -1,0 +1,43 @@
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+.navbar-dark{
+    background-color:rgba(92,92,92,0.719);
+}
+.row-header{
+    margin-left:10px auto;
+    text-align:center;
+}
+.row-content{
+    margin:0px auto;
+    padding:50px 0px 50px 0px;
+    border-bottom:1px ridge;
+    min-height:400px;
+}
+.footer{
+    background-color:rgba(85,85,85,0.75);
+    margin:0px auto;
+    padding:20px 0px 20px 0px;
+}
+.jumbotron{
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background:rgba(85,85,85,0.75);
+    color:floralwhite;
+}
+.column1{padding-left:5px}
+
+#motorModal{min-width:1000px}
+.edit{
+    text-align:right;
+    text-decoration:none;
+}
+.equipList{min-width:80vw}
+@media only screen and (max-width:600px){
+    .dropdown-menu.multi-column{
+        min-width:240px !important;
+        overflow-x:hidden;
+    }
+}

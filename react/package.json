@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "fsevents": "1.2.8"
+  }
+}
