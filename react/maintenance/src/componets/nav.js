@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { NavItem, Dropdown, DropdownItem, DropdownToggle, 
     DropdownMenu, Nav, NavLink } from 'reactstrap';
-import {Link} from 'react-router-dom';
 
 class NavNav extends Component{
     constructor(props) {
@@ -43,17 +42,17 @@ class NavNav extends Component{
                             <DropdownItem>Well 8</DropdownItem> 
                             <DropdownItem>Well 9</DropdownItem> 
                             <DropdownItem divider />
-                            <DropdownItem><a >Booster 1</a></DropdownItem>
-                            <DropdownItem><a >Booster 2</a></DropdownItem>
-                            <DropdownItem><a >Booster 3</a></DropdownItem>
-                            <DropdownItem><a >Booster 4</a></DropdownItem>
-                            <DropdownItem><a >Booster 5</a></DropdownItem>
+                            <DropdownItem>Booster 1</DropdownItem>
+                            <DropdownItem>Booster 2</DropdownItem>
+                            <DropdownItem>Booster 3</DropdownItem>
+                            <DropdownItem>Booster 4</DropdownItem>
+                            <DropdownItem>Booster 5</DropdownItem>
                             <DropdownItem divider />
-                            <DropdownItem><a >Reservior 1</a></DropdownItem>
-                            <DropdownItem><a >Reservior 2</a></DropdownItem>
-                            <DropdownItem><a >Reservior 3</a></DropdownItem>
-                            <DropdownItem><a >Reservior 4</a></DropdownItem>
-                            <DropdownItem><a >Reservior 5</a></DropdownItem> 
+                            <DropdownItem>Reservior 1</DropdownItem>
+                            <DropdownItem>Reservior 2</DropdownItem>
+                            <DropdownItem>Reservior 3</DropdownItem>
+                            <DropdownItem>Reservior 4</DropdownItem>
+                            <DropdownItem>Reservior 5</DropdownItem> 
             
                         </DropdownMenu>
                     </Dropdown>

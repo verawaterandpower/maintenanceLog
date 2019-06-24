@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Card, CardBody, Collapse, CardHeader, Table } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 function RenderPropertiesList(properties){
     
@@ -51,7 +50,7 @@ function RenderServices(services){
         return(<div></div>);
 }
 function Equipment(props){
-    const equipment = props.equipment;
+    
     const listofEquip = props.equipment.map((equip) => {
         return (
             <div key={equip.id}>
