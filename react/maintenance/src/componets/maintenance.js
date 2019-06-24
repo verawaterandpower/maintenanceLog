@@ -40,7 +40,7 @@ function Maintenance(props){
                 <TabContent activeTab={activeTab}>
                     {/* well house */}
                     <TabPane tabId="1">
-                        <Equipment services={props.equip.services} />
+                        <Equipment equipment={props.equip.equipment} />
                     </TabPane>
                     
                     {/* Chlorinator */}
