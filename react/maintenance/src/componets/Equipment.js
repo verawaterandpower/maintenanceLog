@@ -51,16 +51,15 @@ function RenderServices(services){
         return(<div></div>);
 }
 function Equipment(props){
-    const equipment = props.equipment;
     const listofEquip = props.equipment.map((equip) => {
         return (
             <div key={equip.id}>
             <div className="equipList">
-                <Button color="primary" id={equip.name} style={{ marginBottom: '1rem' }}>
-                {equip.name}
+                <Button color="primary"  onClick={() => {equip.open = !equip.open} } >
+                    {equip.name}
                 </Button>
                 <Button type="button" className="edit" ><i className="fa fa-edit"></i> </Button>
-                <Collapse toggler={equip.name}>
+                <Collapse isOpen={equip.open}>
                     <Card>
                         {RenderPropertiesList(equip.properties)}
                         <CardBody>
@@ -77,9 +76,7 @@ function Equipment(props){
                                 </thead>
                                 {/* same as prperties for each tr */}
                                 {RenderServices(equip.services)}
-                                <div >
-                                    <button className="btn btn-secondary">Add Service</button>
-                                </div>
+                                <button className="btn btn-secondary">Add Service</button>
                             </Table>
                         </CardBody>
                     </Card>

@@ -11,6 +11,7 @@ export const EQUIPLIST =
             {   
                 id:1,
                 name:"motor",
+                open:true,
                 properties:[
                     {
                         name:"Horse Power",           
@@ -47,6 +48,7 @@ export const EQUIPLIST =
             {
                 id:2,
                 name:"Meter Flow",
+                open:false,
                 properties:[
                     {
 

@@ -1,0 +1,4 @@
+export const ADD_SERVICE = 'ADD_SERVICE';
+export const EQUIPMENT_LOADING = 'EQUIPMENT_LOADING';
+export const DISHES_FAILED = 'DISHES_FAILED';
+export const ADD_EQUIPMENT = 'ADD_EQUIPMENT';

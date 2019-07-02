@@ -6,14 +6,24 @@ import Home from './Home';
 import Maintenance from './maintenance';
 import {EQUIPLIST} from '../shared/equipList';
 
+import { addComment, fetchDishes } from '../redux/ActionCreators';
+
+const mapStateToProps = state => {
+    return {
+        equipList: state.equipList
+    }
+  }
+  const mapDispatchToProps = dispatch => ({
+    addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment)),
+    fetchDishes: () => { dispatch(fetchDishes())},
+    resetFeedbackForm: () => { dispatch(actions.reset('feedback'))}
+  });
 
 
 class Main extends Component{
     constructor(props) {
         super(props);
-        this.state = {
-            equipList: EQUIPLIST
-        };
+
       }
 
     render(){
@@ -22,6 +32,7 @@ class Main extends Component{
                 <Maintenance equip={this.state.equipList.filter(
                     (equip) => equip.id === parseInt(match.params.id,10))[0]} 
                     tab='1'
+                    addEquipment={this.props.addEquipment}
                    />
             );
             }

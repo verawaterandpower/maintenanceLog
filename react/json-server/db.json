@@ -1,0 +1,72 @@
+{
+    "locations":[
+        {
+            "id":"1",
+            "name":"Well House 1",
+            "location":"to get from gis",
+        
+        },
+        {
+            "id":"2",
+            "name":"Well House 2",
+            "location":"to get from gis",
+        }
+    ],
+    "equipment":[
+        {
+            "id":"1",
+            "locationId":"1",
+            "name":"motor",
+            "installDate":"",
+            "horsePower":"",
+            "oilType":"",
+            "serial":"",
+            "greaseType":""
+        }
+    ],
+    "services":[
+        {
+            "id":"1",
+            "locationId":"1",
+            "equipmentId":"1",
+            "name":"oil change",
+            "date":"",
+            "who":"person",
+            "notes":""
+
+        }
+    ],
+"wellEquip":[{
+    "motor":[{          
+        "horsePower":"",
+            "oilType":"",
+            "serial":"",
+            "greaseType":""
+            
+        }
+    ],
+    "pump":"",
+    "pumpControlValve":"",
+    "pumpDischargeValve":"",
+    "highPSI":"",
+    "flowMeter":"",
+    "airVacValve":"",
+    "preLubeValve":"",
+    "coolers":"",
+    "psiTransducer":"",
+    "pipingValves":""
+}],
+"clorinatorEquip":[{
+    "cl2Pump":"",
+    "cl2Motor":"",
+    "pipingValves":"",
+    "pumpSielondid":"",
+    "flowMeter":"",
+    "psiGages":"",
+    "checkValves":"",
+    "tankFloat":"",
+    "cl2DepositFilter":"",
+    "fanExhaust":"",
+    "heaterThermostat":""
+}]
+}
