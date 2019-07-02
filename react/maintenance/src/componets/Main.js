@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Navbar } from 'reactstrap';
-import { BrowserRouter,Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import NavNav from './nav';
 import Home from './Home';
 import Maintenance from './maintenance';

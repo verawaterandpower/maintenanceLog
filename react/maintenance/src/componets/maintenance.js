@@ -3,10 +3,7 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { TabContent, Nav, NavItem, NavLink, TabPane } from 'reactstrap';
 import classnames from 'classnames';
-import Equipment from './Equipment';
-
-var activeTab;
-    
+import Equipment from './Equipment';    
     
 
 function Maintenance(props){
