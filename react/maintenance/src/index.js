@@ -18,7 +18,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 const DO_NOT_LOGIN = false;
 runWithAdal(authContext, () => {
     ReactDOM.render(<App />, document.getElementById('root'));
-    // Hot Module Replacement API
+     //Hot Module Replacement API
     if (module.hot) {
         module.hot.accept('./App.js', () => {
             const NextApp = require('./App').default;
