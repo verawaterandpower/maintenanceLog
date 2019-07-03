@@ -1,18 +1,13 @@
 export const InitialNewEquip = {
-    firstname: '',
-    lastname: '',
-    telnum: '',
-    email: '',
-    agree: false,
-    contactType: 'Tel.',
-    message: ''
+    name: '',
+    horsePower: '',
+    oilType: '',
+    serial: '',
+    greaseType: ''
 };
 export const InitialNewService = {
-    firstname: '',
-    lastname: '',
-    telnum: '',
-    email: '',
-    agree: false,
-    contactType: 'Tel.',
-    message: ''
+    serviceName: '',
+    name: '',
+    notes: '',
+    
 };

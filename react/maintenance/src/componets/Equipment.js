@@ -50,10 +50,7 @@ function RenderServices(services){
         return(<div></div>);
 }
 function Equipment(props){
-<<<<<<< HEAD
-=======
-    
->>>>>>> ba64d2276a676bd32c3df20f52e893648d284a77
+
     const listofEquip = props.equipment.map((equip) => {
         return (
             <div key={equip.id}>

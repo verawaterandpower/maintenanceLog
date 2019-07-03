@@ -3,13 +3,13 @@
         {
             "id":"1",
             "name":"Well House 1",
-            "location":"to get from gis",
+            "location":"to get from gis"
         
         },
         {
             "id":"2",
             "name":"Well House 2",
-            "location":"to get from gis",
+            "location":"to get from gis"
         }
     ],
     "equipment":[
@@ -29,9 +29,9 @@
             "id":"1",
             "locationId":"1",
             "equipmentId":"1",
-            "name":"oil change",
+            "serviceName":"oil change",
             "date":"",
-            "who":"person",
+            "name":"person",
             "notes":""
 
         }
