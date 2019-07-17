@@ -3,21 +3,76 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { TabContent, Nav, NavItem, NavLink, TabPane } from 'reactstrap';
 import classnames from 'classnames';
-import Equipment from './Equipment';    
+import Equipment from './Equipment';   
+import {Loading} from './LoadingComponent'; 
     
+function EquipmentRender(props){
+    if (props.isLoading) {
+        return(
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    else if (props.errMess) {
+        return(
+            <div className="container">
+                <div className="row"> 
+                    <div className="col-12">
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    else if (props.equip != null) 
+        return(
+            <Equipment equipment={props.equip} />
+        );
+    else
+        return(
+            <React.Fragment>
+                <h3>No Equipment Available</h3>
+            </React.Fragment>
+        );
 
-function Maintenance(props){
+
+}
+const Maintenance = (props) =>{
     const [activeTab, setTab] = useState(props.tab);
+    if (props.isLoading) {
+        return(
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    else if (props.errMess) {
+        return(
+            <div className="container">
+                <div className="row"> 
+                    <div className="col-12">
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    else if (props.locations != null) 
     return(
         <div className="container">
             {/* Breadcrumb */}
             <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>{props.equip.name}</BreadcrumbItem>
+                    <BreadcrumbItem active>{props.locations.name}</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12">
-                <h3>{props.equip.name}</h3>
+                <h3>{props.locations.name}</h3>
             </div>
             </div>
             {/* Equipment Table  */}
@@ -37,7 +92,7 @@ function Maintenance(props){
                 <TabContent activeTab={activeTab}>
                     {/* well house */}
                     <TabPane tabId="1">
-                        <Equipment equipment={props.equip.equipment} />
+                        <EquipmentRender equip={props.equipment} isLoading={props.equipmentisLoading} errMess={props.equipmentErrMess}/>
                     </TabPane>
                     
                     {/* Chlorinator */}
@@ -179,10 +234,12 @@ function Maintenance(props){
                 </div>
             </div>
         </div>
-
-
-
     );
+    else
+        return(
+            <div></div>
+        );            
+      
 }
 
 export default Maintenance;

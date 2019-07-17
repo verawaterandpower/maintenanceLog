@@ -21,7 +21,7 @@ export const fetchLocations = () => (dispatch) => {
             throw errmess;
       })
     .then(response => response.json())
-    .then(promos => dispatch(addLocations(promos)))
+    .then(locations => dispatch(addLocations(locations)))
     .catch(error => dispatch(locationsFailed(error.message)));
 }
 
@@ -44,7 +44,7 @@ export const fetchEquipment = () => (dispatch) => {
     
     dispatch(equipmentLoading());
 
-    return fetch(baseUrl + 'locations')
+    return fetch(baseUrl + 'equipment')
     .then(response => {
         if (response.ok) {
           return response;
@@ -59,7 +59,7 @@ export const fetchEquipment = () => (dispatch) => {
             throw errmess;
       })
     .then(response => response.json())
-    .then(promos => dispatch(addEquipment(promos)))
+    .then(equipment => dispatch(addEquipment(equipment)))
     .catch(error => dispatch(equipmentFailed(error.message)));
 }
 

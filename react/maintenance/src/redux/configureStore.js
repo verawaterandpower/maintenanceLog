@@ -1,16 +1,18 @@
 import {createStore, combineReducers, applyMiddleware } from 'redux';
-import {EQUIPLIST} from '../shared/equipList';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { createForms } from 'react-redux-form';
 import { InitialNewEquip, InitialNewService } from './forms';
+import { Equipment } from './equipment';
+import { Locations } from './locations';
 
 
 
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
-            equipList: EQUIPLIST,
+            locations: Locations,
+            equipment:Equipment,
             
             ...createForms({
                 newService: InitialNewService,

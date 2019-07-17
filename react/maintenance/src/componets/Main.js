@@ -14,8 +14,8 @@ import { connect } from 'react-redux';
 const mapStateToProps = state => {
   return {
     locations: state.locations,
-    equipment: state.comments,
-    services: state.promotions,
+    equipment: state.equipment,
+    services: state.sevices
   }
 }
 const mapDispatchToProps = dispatch => ({
@@ -26,23 +26,27 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Main extends Component{
-    constructor(props) {
-        super(props);
 
-      }
     componentDidMount() {
         this.props.fetchLocations();
         this.props.fetchEquipment();
-
+        console.log("in the did mount" + JSON.stringify(this.props.locations));
     }
     render(){
         const EquipWithId = ({match}) => {
+            console.log("in equipwithid "+JSON.stringify(this.props.locations.locations));
             return(
-                <Maintenance equip={this.state.equipList.filter(
-                    (equip) => equip.id === parseInt(match.params.id,10))[0]} 
+                <Maintenance locations={this.props.locations.locations.filter(
+                        (location) => parseInt(location.id,10) === parseInt(match.params.id,10))[0]} 
+                    isLoading={this.props.locations.isLoading}
+                    errMess={this.props.locations.errMess}
                     tab='1'
+                    equipment={this.props.equipment.equipment.filter(
+                        (equip) => parseInt(equip.locationId) === parseInt(match.params.id,10))}
+                    equipmentisLoading={this.props.equipment.isLoading}
+                    equipmentErrMess={this.props.equipment.errMess}
                     addEquipment={this.props.addEquipment}
-                   />
+                />
             );
             }
         return(
@@ -52,7 +56,7 @@ class Main extends Component{
                 </Navbar>
                 <BrowserRouter>
                     <Switch>
-                        <Route path="/equip/:id" render={EquipWithId}/>
+                        <Route path="/equip/:id" component={EquipWithId}/>
                         <Route path="/" render={Home} />
                     </Switch>
                 </BrowserRouter>

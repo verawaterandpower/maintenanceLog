@@ -10,12 +10,12 @@ function RenderPropertiesList(properties){
         });
         return(
             <React.Fragment>
-            <CardHeader>
-                <h5><b>Info</b> </h5>
-                <div className="row equipInfo"> 
-                    {Properties}
-                </div>
-            </CardHeader>
+                <CardHeader>
+                    <h5><b>Info</b> </h5>
+                    <div className="row equipInfo"> 
+                        {Properties}
+                    </div>
+                </CardHeader>
             </React.Fragment>
                     
         );}
@@ -47,7 +47,7 @@ function RenderServices(services){
             </React.Fragment>);
         }
     else
-        return(<div></div>);
+        return(<React.Fragment></React.Fragment>);
 }
 function Equipment(props){
 
@@ -76,8 +76,8 @@ function Equipment(props){
                                 </thead>
                                 {/* same as prperties for each tr */}
                                 {RenderServices(equip.services)}
-                                <button className="btn btn-secondary">Add Service</button>
                             </Table>
+                            <Button className="btn btn-secondary">Add Service</Button>
                         </CardBody>
                     </Card>
                 </Collapse>
