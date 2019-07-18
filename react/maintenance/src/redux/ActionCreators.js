@@ -147,9 +147,9 @@ export const serviceFailed = (errmess) => ({
     payload: errmess
 });
 
-export const addService = (dishes) => ({
+export const addService = (services) => ({
     type: ActionTypes.ADD_SERVICE,
-    payload: dishes
+    payload: services
 });
 
 export const postService = (dishId, rating, author, comment) => (dispatch) => {

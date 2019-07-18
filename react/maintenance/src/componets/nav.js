@@ -33,7 +33,7 @@ class NavNav extends Component{
                         </DropdownToggle>
                         <DropdownMenu>
                             <DropdownItem href="/equip/1">Well 1</DropdownItem>
-                            <DropdownItem>Well 2</DropdownItem>
+                            <DropdownItem  href="/equip/2">Well 2</DropdownItem>
                             <DropdownItem>Well 3</DropdownItem>
                             <DropdownItem>Well 4</DropdownItem>
                             <DropdownItem>Well 5</DropdownItem>

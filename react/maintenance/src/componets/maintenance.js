@@ -34,9 +34,7 @@ function EquipmentRender(props){
         return(
             <Equipment equipment={props.equip}
                 services={props.services}
-                // servicesLoading={this.props.servicesLoading}
-                // servicesErrMess={this.props.servicesErrMess}
-                // addService={this.props.addService} 
+                addService={props.addService} 
             />
         );
     else
@@ -100,15 +98,14 @@ const Maintenance = (props) =>{
                 <TabContent activeTab={activeTab}>
                     {/* well house */}
                     <TabPane tabId="1">
-                        <h1>{props.locations.name}</h1>
                         <Accordion atomic={false}>
                             <EquipmentRender equip={props.equipment} 
                                 isLoading={props.equipmentisLoading} 
                                 errMess={props.equipmentErrMess}
                                 services={props.services}
-                                // servicesLoading={this.props.servicesisLoading}
-                                // servicesErrMess={this.props.servicesErrMess}
-                                // addService={this.props.addService}
+                                servicesLoading={props.servicesisLoading}
+                                servicesErrMess={props.servicesErrMess}
+                                addService={props.addService}
 
                             />
                         </Accordion>

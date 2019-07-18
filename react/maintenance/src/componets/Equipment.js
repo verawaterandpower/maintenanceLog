@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card, CardBody, Collapse, CardHeader, Table } from 'reactstrap';
 import {  AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
+import {Loading} from './LoadingComponent'; 
 
 function RenderPropertiesList(properties){
     
@@ -30,11 +31,11 @@ function RenderPropertiesList(properties){
 }
 
 function RenderServices(services){
-
     if(services!=null){
         console.log(services)
         const Services = services.map((service)=>{
             return(
+                <React.Fragment key={service.id}>
                 <tr>
                     <th><Button>{service.serviceName}</Button></th>
                     <td>{service.personName}</td>
@@ -42,6 +43,7 @@ function RenderServices(services){
                     <td>{service.date}</td>
                     <td>{service.notes}</td>
                 </tr>
+                </React.Fragment>
             );}
         );
         return(
@@ -57,8 +59,9 @@ function RenderServices(services){
 function Equipment(props){
 
     const listofEquip = props.equipment.map((equip) => {
-        // const services = this.props.services.services.filter(
-        //     (service) => parseInt(service.equipmentId) === parseInt(equip.id,10));
+        const services = props.services.filter(
+            (service) => parseInt(service.equipmentId) === parseInt(equip.id,10));
+       
         return (
             <div key={equip.id}>
                 <AccordionItem title={equip.name}>
@@ -77,7 +80,7 @@ function Equipment(props){
                                     </tr>
                                 </thead>
                                 {/* same as prperties for each tr */}
-                                {/* {RenderServices(services)} */}
+                                {RenderServices(services)}
                             </Table>
                             <Button className="btn btn-secondary">Add Service</Button>
                         </CardBody>
