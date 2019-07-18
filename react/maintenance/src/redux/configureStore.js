@@ -5,7 +5,7 @@ import { createForms } from 'react-redux-form';
 import { InitialNewEquip, InitialNewService } from './forms';
 import { Equipment } from './equipment';
 import { Locations } from './locations';
-
+import {Services} from './services';
 
 
 export const ConfigureStore = () => {
@@ -13,7 +13,7 @@ export const ConfigureStore = () => {
         combineReducers({
             locations: Locations,
             equipment:Equipment,
-            
+            services: Services,
             ...createForms({
                 newService: InitialNewService,
                 newEquip: InitialNewEquip

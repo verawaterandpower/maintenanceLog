@@ -17,6 +17,26 @@
             "id":"1",
             "locationId":"1",
             "name":"motor",
+            "installDate":"1-2-15",
+            "horsePower":"250",
+            "oilType":"um i don't knowd",
+            "serial":"xxx-111-222",
+            "greaseType":"same as oil"
+        },
+        {
+            "id":"2",
+            "locationId":"1",
+            "name":"pump",
+            "installDate":"",
+            "horsePower":"",
+            "oilType":"",
+            "serial":"",
+            "greaseType":""
+        },
+        {
+            "id":"3",
+            "locationId":"2",
+            "name":"motor",
             "installDate":"",
             "horsePower":"",
             "oilType":"",
@@ -30,8 +50,9 @@
             "locationId":"1",
             "equipmentId":"1",
             "serviceName":"oil change",
+            "previouusDate":"",
             "date":"",
-            "name":"person",
+            "personName":"person",
             "notes":""
 
         }

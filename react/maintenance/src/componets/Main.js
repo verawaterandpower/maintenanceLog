@@ -5,7 +5,7 @@ import NavNav from './nav';
 import Home from './Home';
 import Maintenance from './maintenance';
 
-import { fetchLocations, postService, fetchEquipment } from '../redux/ActionCreators';
+import { fetchLocations, postService, fetchEquipment, fetchService } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 //import { actions } from 'react-redux-form';
 //import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -15,14 +15,14 @@ const mapStateToProps = state => {
   return {
     locations: state.locations,
     equipment: state.equipment,
-    services: state.sevices
+    services: state.services
   }
 }
 const mapDispatchToProps = dispatch => ({
   postService: (dishId, rating, author, comment) => dispatch(postService(dishId, rating, author, comment)),  
   fetchEquipment: () => { dispatch(fetchEquipment())},
-  
-  fetchLocations: () => { dispatch(fetchLocations())}
+  fetchLocations: () => { dispatch(fetchLocations())},
+  fetchService: () => { dispatch(fetchService())}
 });
 
 class Main extends Component{
@@ -30,13 +30,14 @@ class Main extends Component{
     componentDidMount() {
         this.props.fetchLocations();
         this.props.fetchEquipment();
-        console.log("in the did mount" + JSON.stringify(this.props.locations));
+        this.props.fetchService();
     }
     render(){
         const EquipWithId = ({match}) => {
             console.log("in equipwithid "+JSON.stringify(this.props.locations.locations));
             return(
-                <Maintenance locations={this.props.locations.locations.filter(
+                <Maintenance 
+                    locations={this.props.locations.locations.filter(
                         (location) => parseInt(location.id,10) === parseInt(match.params.id,10))[0]} 
                     isLoading={this.props.locations.isLoading}
                     errMess={this.props.locations.errMess}
@@ -46,6 +47,11 @@ class Main extends Component{
                     equipmentisLoading={this.props.equipment.isLoading}
                     equipmentErrMess={this.props.equipment.errMess}
                     addEquipment={this.props.addEquipment}
+                    services={this.props.services.services.filter(
+                        (service) => parseInt(service.locationId) === parseInt(match.params.id,10))}
+                    servicesisLoading={this.props.services.isLoading}
+                    servicesErrMess={this.props.services.errMess}
+                    addService={this.props.addEquipment}
                 />
             );
             }

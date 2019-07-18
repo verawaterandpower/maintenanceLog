@@ -118,7 +118,7 @@ export const fetchService = () => (dispatch) => {
     
     dispatch(serviceLoading());
 
-    return fetch(baseUrl + 'locations')
+    return fetch(baseUrl + 'services')
     .then(response => {
         if (response.ok) {
           return response;

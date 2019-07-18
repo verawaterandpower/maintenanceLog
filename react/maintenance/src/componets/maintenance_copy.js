@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
-import { Accordion } from 'react-light-accordion';
-import 'react-light-accordion/demo/css/index.css';
-
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { TabContent, Nav, NavItem, NavLink, TabPane } from 'reactstrap';
 import classnames from 'classnames';
 import Equipment from './Equipment';   
 import {Loading} from './LoadingComponent'; 
-
+    
 function EquipmentRender(props){
     if (props.isLoading) {
         return(
@@ -32,12 +29,7 @@ function EquipmentRender(props){
     }
     else if (props.equip != null) 
         return(
-            <Equipment equipment={props.equip}
-                services={props.services}
-                // servicesLoading={this.props.servicesLoading}
-                // servicesErrMess={this.props.servicesErrMess}
-                // addService={this.props.addService} 
-            />
+            <Equipment equipment={props.equip} />
         );
     else
         return(
@@ -100,18 +92,7 @@ const Maintenance = (props) =>{
                 <TabContent activeTab={activeTab}>
                     {/* well house */}
                     <TabPane tabId="1">
-                        <h1>{props.locations.name}</h1>
-                        <Accordion atomic={false}>
-                            <EquipmentRender equip={props.equipment} 
-                                isLoading={props.equipmentisLoading} 
-                                errMess={props.equipmentErrMess}
-                                services={props.services}
-                                // servicesLoading={this.props.servicesisLoading}
-                                // servicesErrMess={this.props.servicesErrMess}
-                                // addService={this.props.addService}
-
-                            />
-                        </Accordion>
+                        <EquipmentRender equip={props.equipment} isLoading={props.equipmentisLoading} errMess={props.equipmentErrMess}/>
                     </TabPane>
                     
                     {/* Chlorinator */}
@@ -218,6 +199,39 @@ const Maintenance = (props) =>{
                     </div>
                     </TabPane>
                 </TabContent>
+            </div>
+            {/* oil Modal */}
+            <div className="modal fade" role="dialog" id="oilModal">
+                <div className="modal-dialog modal-lg align-content-center">
+                    <div className="modal-content">
+
+                        <div className="modal-header">
+                            <h4>Well House 1: Motor</h4>
+                        </div>
+
+                        <div className="modal-body">
+                            <form>
+                                This will be where data is updated
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {/* add Equipment Form */}
+            <div className="modal fade" role="dialog" id="wellEquipForm">
+                <div className="modal-dialog modal-lg align-content-center">
+                    <div className="modal-content">
+                            <div className="modal-header">
+                                <h4>Add Equipment for Well House 1</h4>
+                            </div>
+                            <div className="modal-body">
+                                <form>
+
+                                </form>
+                            </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

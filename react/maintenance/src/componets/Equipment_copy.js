@@ -1,24 +1,19 @@
 import React from 'react';
 import { Button, Card, CardBody, Collapse, CardHeader, Table } from 'reactstrap';
-import {  AccordionItem } from 'react-light-accordion';
-import 'react-light-accordion/demo/css/index.css';
 
 function RenderPropertiesList(properties){
     
     if(properties!=null){
+
+        const Properties = properties.map((property)=>{
+            return(<p>{property.name}: {property.prop}</p>);
+        });
         return(
             <React.Fragment>
                 <CardHeader>
-                    <div className="d-inline-flex"> 
-                        <h5><b>Info &nbsp;&nbsp;&nbsp;</b> </h5> 
-                        <Button type="button" size="sm"><i className="fa fa-edit "></i> </Button>
-                    </div>
+                    <h5><b>Info</b> </h5>
                     <div className="row equipInfo"> 
-                    <p><b>Install Date</b>: {properties.installDate}&nbsp;</p> 
-                    <p><b>Horse Power</b>: {properties.horsePower}&nbsp;</p> 
-                    <p><b>Oil Type</b>: {properties.oilType}&nbsp;</p> 
-                    <p><b>Serial Number</b>: {properties.serial}&nbsp;</p> 
-                    <p><b>Grease Type</b>: {properties.greaseType}&nbsp;</p> 
+                        {Properties}
                     </div>
                 </CardHeader>
             </React.Fragment>
@@ -36,8 +31,8 @@ function RenderServices(services){
         const Services = services.map((service)=>{
             return(
                 <tr>
-                    <th><Button>{service.serviceName}</Button></th>
-                    <td>{service.personName}</td>
+                    <th><Button>{service.type}</Button></th>
+                    <td>{service.person}</td>
                     <td>{service.previousDate}</td>
                     <td>{service.date}</td>
                     <td>{service.notes}</td>
@@ -57,15 +52,18 @@ function RenderServices(services){
 function Equipment(props){
 
     const listofEquip = props.equipment.map((equip) => {
-        // const services = this.props.services.services.filter(
-        //     (service) => parseInt(service.equipmentId) === parseInt(equip.id,10));
         return (
             <div key={equip.id}>
-                <AccordionItem title={equip.name}>
+            <div className="equipList">
+                <Button color="primary"  onClick={() => {equip.open = !equip.open} } >
+                    {equip.name}
+                </Button>
+                <Button type="button" className="edit" ><i className="fa fa-edit"></i> </Button>
+                <Collapse isOpen={equip.open}>
                     <Card>
-                        {RenderPropertiesList(equip)}
-                        <CardBody >
-                            <Table bordered striped hover >
+                        {RenderPropertiesList(equip.properties)}
+                        <CardBody>
+                            <Table striped >
                                 {/*  Table Header */}
                                 <thead >
                                     <tr>
@@ -77,12 +75,13 @@ function Equipment(props){
                                     </tr>
                                 </thead>
                                 {/* same as prperties for each tr */}
-                                {/* {RenderServices(services)} */}
+                                {RenderServices(equip.services)}
                             </Table>
                             <Button className="btn btn-secondary">Add Service</Button>
                         </CardBody>
                     </Card>
-                </AccordionItem>
+                </Collapse>
+            </div>
             </div>
         );
     });
