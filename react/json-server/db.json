@@ -16,16 +16,18 @@
         {
             "id":"1",
             "locationId":"1",
+            "wellHouse":"true",
             "name":"motor",
             "installDate":"1-2-15",
             "horsePower":"250",
-            "oilType":"um i don't knowd",
+            "oilType":"um i don't know",
             "serial":"xxx-111-222",
             "greaseType":"same as oil"
         },
         {
             "id":"2",
             "locationId":"1",
+            "wellHouse":"true",
             "name":"pump",
             "installDate":"",
             "horsePower":"",
@@ -36,12 +38,46 @@
         {
             "id":"3",
             "locationId":"2",
+            "wellHouse":"true",
             "name":"motor",
             "installDate":"",
             "horsePower":"",
             "oilType":"",
             "serial":"",
             "greaseType":""
+        },
+        {
+            "id":"4",
+            "locationId":"1",
+            "wellHouse":"false",
+            "name":"filter",
+            "installDate":"1-2-15",
+            "horsePower":"250",
+            "oilType":"um i don't",
+            "serial":"xxx-111-222",
+            "greaseType":"Chlorinator"
+        },
+        {
+            "id":"5",
+            "locationId":"1",
+            "wellHouse":"false",
+            "name":"pump",
+            "installDate":"",
+            "horsePower":"",
+            "oilType":"",
+            "serial":"",
+            "greaseType":"Chlorinator"
+        },
+        {
+            "id":"6",
+            "locationId":"2",
+            "wellHouse":"false",
+            "name":"Chlorinator",
+            "installDate":"",
+            "horsePower":"",
+            "oilType":"",
+            "serial":"",
+            "greaseType":"Chlorinator"
         }
     ],
     "services":[

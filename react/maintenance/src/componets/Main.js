@@ -5,7 +5,7 @@ import NavNav from './nav';
 import Home from './Home';
 import Maintenance from './maintenance';
 
-import { fetchLocations, postService, fetchEquipment, fetchService } from '../redux/ActionCreators';
+import { fetchLocations, postService, fetchEquipment, fetchService,postEquipment } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
 //import { actions } from 'react-redux-form';
 //import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -19,7 +19,8 @@ const mapStateToProps = state => {
   }
 }
 const mapDispatchToProps = dispatch => ({
-  postService: (dishId, rating, author, comment) => dispatch(postService(dishId, rating, author, comment)),  
+  postService: (dishId, rating, author, comment)=> dispatch(postService(dishId, rating, author, comment)),  
+  postEquipment:(id,locationId,wellHouse,name,installDate,horsePower,oilType,serial,greaseType)=>dispatch(postEquipment(id,locationId,wellHouse,name,installDate,horsePower,oilType,serial,greaseType)),
   fetchEquipment: () => { dispatch(fetchEquipment())},
   fetchLocations: () => { dispatch(fetchLocations())},
   fetchService: () => { dispatch(fetchService())}
@@ -51,7 +52,7 @@ class Main extends Component{
                         (service) => parseInt(service.locationId) === parseInt(match.params.id,10))}
                     servicesisLoading={this.props.services.isLoading}
                     servicesErrMess={this.props.services.errMess}
-                    addService={this.props.addEquipment}
+                    postEquipment={this.props.postEquipment}
                 />
             );
             }

@@ -78,15 +78,19 @@ export const addEquipment = (dishes) => ({
     payload: dishes
 });
 
-export const postEquipment = (dishId, rating, author, comment) => (dispatch) => {
+export const postEquipment = (id,locationId,wellHouse,name,installDate,horsePower,oilType,serial,greaseType) => (dispatch) => {
 
     const newEquipment = {
-        dishId: dishId,
-        rating: rating,
-        author: author,
-        comment: comment
+        id:id,
+        locationId:locationId,
+        wellHouse:wellHouse,
+        name: name,
+        installDate: installDate,
+        horsePower: horsePower,
+        oilType: oilType,
+        serial:serial,
+        greaseType:greaseType
     };
-    newEquipment.date = new Date().toISOString();
     
     return fetch(baseUrl + 'equipment', {
         method: "POST",
